@@ -1,0 +1,33 @@
+{%extends "auth_layout.html"%}
+{%block title%}Notifications{%endblock%}
+{%block nav%}{{super()}}{%endblock%}
+{%block content%}
+    <div class="">
+      
+      <h5 class="text-left">Notifications</h5>
+      <div class="border-top border-bottom">
+        <!-- <div class="row justify-content-left text-center"> -->
+            <div class="row p-1 alert alert-light" role="alert">
+                <div class="pull-left mr-2 ml-2">                         
+                <img src="{{url_for ('static', filename='pictures/sam2.jpg')}}" alt="ss" class="rounded-circle" width="50px" height="50px">
+                </div>
+                <div class="pull-left">
+                    <small class="h6">Victor commented on your post on <a href="#" class="alert-link stretched-link">an example link</a></small><br>
+                    <small class="text-muted">8 hours ago</small>
+                </div>
+
+            </div>
+            <div class="row p-1 bg">
+              <div class="pull-left mr-2 ml-2">                         
+              <img src="{{url_for ('static', filename='pictures/sam2.jpg')}}" alt="ss" class="rounded-circle" width="50px" height="50px">
+              </div>
+              <div class="pull-left">
+                  <small class="h6">Victor commented on your post on <a href="#" class="alert-link stretched-link">an example link</a></small><br>
+                  <small class="text-muted">8 hours ago</small>
+              </div>
+
+          </div>
+            
+    
+    </div>
+  {%endblock%}

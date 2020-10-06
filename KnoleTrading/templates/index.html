@@ -1,0 +1,140 @@
+{%extends "layout.html"%}
+{%block title%}Home{%endblock%}
+{%block navlist%}
+<ul class="navbar-nav ml-auto">
+    <li class="nav-item">
+        <a href="{{url_for('login')}}" class="nav-link">Login</a>
+    </li>
+    <li class="nav-item">
+        <a href="{{url_for('signup')}}" class="nav-link">SigUp</a>
+    </li>
+    <li class="nav-item">
+        <a id="#why" class="nav-link">About</a>
+    </li>
+</ul>
+{%endblock%}
+{%block nav%}{{super()}}{%endblock%}
+{%block content%}
+<div class="jumbotron">
+    <h1 class="display-5">What is KnowleTrading?</h1>
+    <p class="lead">it is simply a platform that connects teachers and students of various universities.</p>
+    <p class="lead">
+        <a class="btn btn-lg" id="btn-choco" href="#" role="button">Enroll with us</a>
+    </p>
+</div>
+<div>
+    <h4>Why is KnowleTrading recommended for students</h4>
+</div>
+<div class="row" id="why">
+    <div class="col-sm-12 col-md-4">
+        <div class="card shadow mb-4">
+            <div class="card-body text-center">
+                <h5 class="card-title">Online Tutorials</h5>
+                <p class="card-text">Tutorials in documented and video format will be published.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-12 col-md-4">
+        <div class="card shadow mb-4">
+            <div class="card-body text-center">
+                <h5 class="card-title">Past questions and handouts</h5>
+                <p class="card-text">Handouts, past questions and other relevant academic materials will be passed on from various teachers.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-12 col-md-4">
+        <div class="card shadow">
+            <div class="card-body text-center">
+                <h5 class="card-title">Social bonding</h5>
+                <p class="card-text">Study buddies and reading partners will be formed as we are looking for a way to create an interactive room for members.</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div>
+    <h4>Why is KnowleTrading recommended for teachers</h4>
+</div>
+<div class="row">
+    <div class="col-sm-12 col-md-4">
+        <div class="card shadow mb-4">
+            <div class="card-body text-center">
+                <h5 class="card-title">Advertising medium</h5>
+                <p class="card-text">We bring students who are in need of what you teach, updating them on when and where your class is holding.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-12 col-md-4">
+        <div class="card shadow mb-4">
+            <div class="card-body text-center">
+                <h5 class="card-title">Advertising medium</h5>
+                <p class="card-text">We help you marketize your academic materials as we advertise them on our platform.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-12 col-md-4">
+        <div class="card shadow">
+            <div class="card-body text-center">
+                <h5 class="card-title">Teacher and student relationship</h5>
+                <p class="card-text">We improve teachers to students relationships off campus.</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row mt-sm-6 mt-md-4 mb-md-4 mb-sm-6">
+    <div class="container">
+        <div class="col-sm-12  col md-8">
+            <div class="alert alert-info font-italic">
+                <h3 class="alert-heading">Just so you know</h3>
+                <p>We are not encouraging students to miss lectures as we are trying to provide helpful materials, rather you can use as a helping guide, adding to what you know already</p>
+                <p>We connect teachers and students together. All materials and tutorials are from our teachers.</p>
+                <p><a href="teacher_signup.html" class="alert-link">Register now</a></p>
+            </div>
+        </div>    
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12 col-md-4">
+        <div class="p-4">
+        <div class="card shadow mb-4 border-dark rounded-top">
+            <div class="card-body text-left">
+                <p class="card-text">testimony1 dndjjdjjdddddddddddddddddddddddddddddddddddddddddddddddddddddddddcncncnmcmsjjdkkskjffkfjkdjc.</p>
+            </div>
+             <div class="card-body text-right">
+                <img src="sam2.jpg" alt="ss" class="img-rounded img-responsive" width="100px" height="100px">
+                <h5>Victor</h5>
+                <small class="text-muted"><i>student</i></small>
+            </div>
+        </div>
+        </div>
+    </div>
+    <div class="col-sm-12 col-md-4">
+        <div class="p-4">
+        <div class="card shadow mb-4 border-dark rounded-top">
+            <div class="card-body text-left">
+                <p class="card-text">testimony 2bbddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddndndndn.</p>
+            </div>
+            <div class="card-body text-right">
+                <img src="sam.jpg" alt="ss" class="img-rounded img-responsive" width="100px" height="100px">
+                <h5>Sammy</h5>
+                <small class="text-muted"><i>teacher</i></small>
+            </div>
+        </div>
+        </div>
+    </div>
+    <div class="col-sm-12 col-md-4">
+        <div class="p-4">
+        <div class="card shadow mb-4 border-dark rounded-top">
+            <div class="card-body text-left">
+                <p class="card-text">testimony 2xbxnxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxsjsjjjjjjjjjjjjiwiiw.</p>
+            </div>
+            <div class="card-body text-right">
+                <img src="sam2.jpg" alt="ss" class="img-rounded img-responsive" width="100px" height="100px">
+                <h5>Sammy</h5>
+                <small class="text-muted"><i>teacher</i></small>
+            </div>
+        </div>
+        </div>
+    </div>
+    
+</div>
+{%endblock%}

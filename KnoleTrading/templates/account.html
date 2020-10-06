@@ -1,0 +1,254 @@
+{%extends "auth_layout.html"%}
+{%block title%}Account{%endblock%}
+{%block navlist%}
+{{super()}}
+{%endblock%}
+{%block nav%}{{super()}}{%endblock%}
+{%block content%}
+    {{super()}}
+    <div class="container-fluid bg-light p-4">
+        <div class="container">
+            <div class="font-weight-bold m-2 mt-0">
+                    <ul class="nav nav-tabs text-center">
+                        <li class="nav-item"><a href="{{url_for('account')}}" class="nav-link active">Materials</a></li>
+                        <li class="nav-item"><a href="{{url_for('sugg')}}" class="nav-link text-success">Suggestions</a></li>
+                    </ul>
+            </div>
+                <div class="text-center">
+                    <a class="btn btn-success text-light" href="{{url_for('create_post')}}">Place an Ad</a>
+                </div>
+                
+                <h5 class="mt-4">Most Recent</h5>
+                <div class="row">
+                    {%for post in posts%}
+                        <div class="col-md-4 col-sm-6 p-4">
+                            <div class="card shadow border-success">
+                                <img src="{{url_for ('static', filename='post_pictures/'+post.image_file)}}" width=200px height=200px alt="" class="card-img-top pl-4 pr-4 pt-4" >
+                                <div class="card-text">
+                                    <div class="pull-left">
+                                        <img class="rounded-circle mr-2 ml-2 mt-2 img-fluid" width="30px" height="30px" src="{{url_for ('static', filename='pictures/'+post.user.profile.image_file)}}" alt="">
+                                    </div>
+                                    <div class="pull-left">
+                                        <div class="">
+                                            <span class="small"> <a href="{{url_for('view_product', post_id=post.id)}}" class="text-success stretched-link">{{post.user.profile.first_name}} {{post.user.profile.last_name}}</a></span>
+                                        </div>
+                                        <div class="">
+                                            <span class="small text-muted">{{post.date_created.strftime('%Y-%m-%d')}}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-footer">
+                                    <h6 class="text-truncate">{{post.description}}</h6>
+                                    <p class="text-muted">&#8358;{{post.price}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    {%endfor%}
+                </div>    
+            <div class="text-right mb-4">
+                <a href="material.html" class="btn btn-success btn-lg">See more</a>
+            </div>
+            <h5 class="">Most Popular</h5>
+            <div class="row">
+
+                <div class="col-md-4 col-sm-6 p-4">
+                <div class="card shadow border-success">
+                    <img src="{{url_for ('static', filename='pictures/sam2.jpg')}}" alt="" class="card-img-top pl-4 pr-4 pt-4 img-fluid"  >
+                    <div class="card-text">
+                        <div class="pull-left">
+                            <img class="rounded-circle mr-2 ml-2 mt-2" width="30px" height="30px" src="sam.JPG" alt="">
+                        </div>
+                        <div class="pull-left">
+                            <div class="">
+                                <span class="small"> <a href="index.html" class="text-success stretched-link">SmartHub</a></span>
+                            </div>
+                            <div class="">
+                                <span class="small text-muted">1 week ago</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <h6 class="text-truncate">Past question on csc 2015 nsnsjjkkdkkdnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn</h6>
+                        <p class="text-muted">&#8358;500</p>
+                    </div>
+                </div>
+                
+            </div>
+        
+            <div class="col-md-4 col-sm-6 p-4">
+                <div class="card shadow border-success">
+                    <img src="{{url_for ('static', filename='pictures/sam2.jpg')}}" alt="" class="card-img-top pl-4 pr-4 pt-4 img-fluid"  >
+                    <div class="card-text">
+                        <div class="pull-left">
+                            <img class="rounded-circle mr-2 ml-2 mt-2" width="30px" height="30px" src="sam.JPG" alt="">
+                        </div>
+                        <div class="pull-left">
+                            <div class="">
+                                <span class="small"> <a href="index.html" class="text-success stretched-link">SmartHub</a></span>
+                            </div>
+                            <div class="">
+                                <span class="small text-muted">1 week ago</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <h6 class="text-truncate">Past question on csc 2015 nsnsjjkkdkkd</h6>
+                        <p class="text-muted">&#8358;500</p>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="col-md-4 col-sm-6 p-4">
+                <div class="card shadow border-success">
+                    <img src="{{url_for ('static', filename='pictures/sam2.jpg')}}" alt="" class="card-img-top pl-4 pr-4 pt-4 img-fluid"  >
+                    <div class="card-text">
+                        <div class="pull-left">
+                            <img class="rounded-circle mr-2 ml-2 mt-2" width="30px" height="30px" src="sam.JPG" alt="">
+                        </div>
+                        <div class="pull-left">
+                            <div class="">
+                                <span class="small"> <a href="index.html" class="text-success stretched-link">SmartHub</a></span>
+                            </div>
+                            <div class="">
+                                <span class="small text-muted">1 week ago</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <h6 class="text-truncate">Past question on csc 2015 nsnsjjkkdkkd</h6>
+                        <p class="text-muted">&#8358;500</p>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="col-md-6 col-sm-6 p-4">
+                <div class="card shadow border-success">
+                    <img src="{{url_for ('static', filename='pictures/sam2.jpg')}}" alt="" class="card-img-top pl-4 pr-4 pt-4 img-fluid"  >
+                    <div class="card-text">
+                        <div class="pull-left">
+                            <img class="rounded-circle mr-2 ml-2 mt-2" width="30px" height="30px" src="sam.JPG" alt="">
+                        </div>
+                        <div class="pull-left">
+                            <div class="">
+                                <span class="small"> <a href="index.html" class="text-success stretched-link">SmartHub</a></span>
+                            </div>
+                            <div class="">
+                                <span class="small text-muted">1 week ago</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <h6 class="text-truncate">Past question on csc 2015 nsnsjjkkdkkd</h6>
+                        <p class="text-muted">&#8358;500</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <div class="text-right mb-4">
+            <a href="" class="btn btn-success btn-lg">See more</a>
+        </div>
+        <h5 class="">Recommended</h5>
+        <div class="row">
+
+            <div class="col-md-4 col-sm-6 p-4">
+            <div class="card shadow border-success">
+                <img src="{{url_for ('static', filename='pictures/sam2.jpg')}}" alt="" class="card-img-top pl-4 pr-4 pt-4 img-fluid"  >
+                <div class="card-text">
+                    <div class="pull-left">
+                        <img class="rounded-circle mr-2 ml-2 mt-2" width="30px" height="30px" src="sam.JPG" alt="">
+                    </div>
+                    <div class="pull-left">
+                        <div class="">
+                            <span class="small"> <a href="userprofile.html" class="text-success stretched-link">SmartHub</a></span>
+                        </div>
+                        <div class="">
+                            <span class="small text-muted">1 week ago</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <h6 class="text-truncate">Past question on csc 2015 nsnsjjkkdkkd</h6>
+                    <p class="text-muted">&#8358;500</p>
+                </div>
+            </div>
+            
+        </div>
+    
+        <div class="col-md-4 col-sm-6 p-4">
+            <div class="card shadow border-success">
+                <img src="{{url_for ('static', filename='pictures/sam2.jpg')}}" alt="" class="card-img-top pl-4 pr-4 pt-4 img-fluid"  >
+                <div class="card-text">
+                    <div class="pull-left">
+                        <img class="rounded-circle mr-2 ml-2 mt-2" width="30px" height="30px" src="sam.JPG" alt="">
+                    </div>
+                    <div class="pull-left">
+                        <div class="">
+                            <span class="small"> <a href="userprofile.html.html" class="text-success stretched-link">SmartHub</a></span>
+                        </div>
+                        <div class="">
+                            <span class="small text-muted">1 week ago</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <h6 class="text-truncate">Past question on csc 2015 nsnsjjkkdkkd</h6>
+                    <p class="text-muted">&#8358;500</p>
+                </div>
+            </div>
+            
+        </div>
+        <div class="col-md-4 col-sm-6 p-4">
+            <div class="card shadow border-success">
+                <img src="{{url_for ('static', filename='pictures/sam2.jpg')}}" alt="" class="card-img-top pl-4 pr-4 pt-4 img-fluid"  >
+                <div class="card-text">
+                    <div class="pull-left">
+                        <img class="rounded-circle mr-2 ml-2 mt-2" width="30px" height="30px" src="sam.JPG" alt="">
+                    </div>
+                    <div class="pull-left">
+                        <div class="">
+                            <span class="small"> <a href="userprofile.html" class="text-success stretched-link">SmartHub</a></span>
+                        </div>
+                        <div class="">
+                            <span class="small text-muted">1 week ago</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <h6 class="text-truncate">Past question on csc 2015 nsnsjjkkdkkd</h6>
+                    <p class="text-muted">&#8358;500</p>
+                </div>
+            </div>
+            
+        </div>
+        <div class="col-md-4 col-sm-6 p-4">
+            <div class="card shadow border-success">
+                <img src="{{url_for ('static', filename='pictures/sam2.jpg')}}" alt="" class="card-img-top pl-4 pr-4 pt-4 img-fluid"  >
+                <div class="card-text">
+                    <div class="pull-left">
+                        <img class="rounded-circle mr-2 ml-2 mt-2" width="30px" height="30px" src="sam.JPG" alt="">
+                    </div>
+                    <div class="pull-left">
+                        <div class="">
+                            <span class="small"> <a href="userprofile.html" class="text-success stretched-link">SmartHub</a></span>
+                        </div>
+                        <div class="">
+                            <span class="small text-muted">1 week ago</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <h6 class="text-truncate">Past question on csc 2015 nsnsjjkkdkkd</h6>
+                    <p class="text-muted">&#8358;500</p>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+        <div class="text-right">
+            <a href="" class="btn btn-success btn-lg">See more</a>
+        </div> 
+           
+    </div>
+</div>
+{%endblock%}

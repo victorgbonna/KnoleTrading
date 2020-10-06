@@ -1,0 +1,82 @@
+{%extends "auth_layout.html"%}
+{%block title%}Teacgers{%endblock%}
+{%block navlist%}
+{{super()}}
+{%endblock%}
+{%block nav%}{{super()}}{%endblock%}
+{%block content%}
+    {{super()}}
+    <div class="container-fluid bg-light p-4">
+        <div class="container">
+            <div class="text-center font-weight-bold m-2 mt-0">
+                <a href="product.html" class="text-decoration-none text-dark h4">Teachers</a>
+            </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-6">
+            <div class="md-2 p-4">
+            <div class="card shadow border-success">
+                <div class="card shadow border-success">
+                    <div class="card-header font-weight-bold">About Teacher</div>
+                    
+                    <div class="card-body text-center">
+                        <div class="card-image">
+                            <img class="rounded-circle card-image-top" width="150px" height="150px" src="{{url_for ('static', filename='pictures/sam2.jpg')}}" alt="">
+                        </div>                        
+                        <h6 class="mt-3">Full name : Victor ogbonna</h6>
+                        <h6>Location : Rivers state</h6>
+                        <h6 class="text-truncate">Courses I teach : Maths, Chemistry, Physics</h6>
+                        <h6>Phone : 08102603301</h6>
+                        <h6>Email : victorgbonna@gmail.com</h6>
+                        <a href="userprofile.html" class="btn btn-success">See more...</a>
+                    </div>
+                </div>
+            </div>
+            </div>
+
+        </div>
+        
+        <div class="col-lg-4 col-md-4 col-sm-6">
+            <div class="md-2 p-4">
+            <div class="card shadow border-success">
+                <div class="card shadow border-success">
+                    <div class="card-header font-weight-bold">About Teacher</div>
+                    
+                    <div class="card-body text-center">
+                        <div class="card-image">
+                            <img class="rounded-circle card-image-top" width="150px" height="150px" src="{{url_for ('static', filename='pictures/sam2.jpg')}}" alt="">
+                        </div>                        
+                        <h6 class="mt-3">Full name : Victor ogbonna</h6>
+                        <h6>Location : Rivers state</h6>
+                        <h6 class="text-truncate">Courses I teach : Maths, Chemistry, Physics</h6>
+                        <h6>Phone : 08102603301</h6>
+                        <h6>Email : victorgbonna@gmail.com</h6>
+                        <a href="userprofile.html" class="btn btn-success">See more...</a>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-6">
+            <div class="md-2 p-4">
+            <div class="card shadow border-success">
+                <div class="card shadow border-success bd-thick">
+                    <div class="card-header font-weight-bold">About Teacher</div>
+                    
+                    <div class="card-body text-center">
+                        <div class="card-image">
+                            <img class="rounded-circle card-image-top" width="150px" height="150px" src="{{url_for ('static', filename='pictures/sam2.jpg')}}" alt="">
+                        </div>                        
+                        <h6 class="mt-3">Full name : Victor ogbonna</h6>
+                        <h6>Location : Rivers state</h6>
+                        <h6 class="text-truncate">Courses I teach : Maths, Chemistry, Physics</h6>
+                        <h6>Phone : 08102603301</h6>
+                        <h6>Email : victorgbonna@gmail.com</h6>
+                        <a href="userprofile.html" class="btn btn-success">See more...</a>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+{%endblock%}

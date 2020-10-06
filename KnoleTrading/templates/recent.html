@@ -1,0 +1,119 @@
+{%extends "auth_layout.html"%}
+{%block title%}Account{%endblock%}
+{%block navlist%}
+{{super()}}
+{%endblock%}
+{%block nav%}{{super()}}{%endblock%}
+{%block content%}
+    {{super()}}
+    <div class="container-fluid bg-light p-4">
+        <div class="container">
+            <div class="font-weight-bold m-2 mt-0">
+                    <ul class="nav nav-tabs text-center">
+                        <li class="nav-item"><a href="{{url_for('account')}}" class="nav-link active">Most Recent</a></li>
+                        <li class="nav-item"><a href="{{url_for('sugg')}}" class="nav-link text-success">Most Popular</a></li>
+                        <li class="nav-item"><a href="{{url_for('sugg')}}" class="nav-link text-success">Recommended</a></li>
+                    </ul>
+            </div>
+
+                
+            <h5 class="mt-4">Most Recent</h5>
+                <div class="row">
+
+                    <div class="col-md-4 col-sm-6 p-4">
+                    <div class="card shadow border-success">
+                        <img src="{{url_for ('static', filename='pictures/sam2.jpg')}}" alt="" class="card-img-top pl-4 pr-4 pt-4 img-fluid" >
+                        <div class="card-text">
+                            <div class="pull-left">
+                                <img class="rounded-circle mr-2 ml-2 mt-2 img-fluid" width="30px" height="30px" src="sam.JPG" alt="">
+                            </div>
+                            <div class="pull-left">
+                                <div class="">
+                                    <span class="small"> <a href="userprofile.html" class="text-success stretched-link">SmartHub</a></span>
+                                </div>
+                                <div class="">
+                                    <span class="small text-muted">1 week ago</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <h6 class="text-truncate">Past question on csc 2015 nsnsjjkkdkkd</h6>
+                            <p class="text-muted">&#8358;500</p>
+                        </div>
+                    </div>
+                    
+                </div>
+            
+                <div class="col-md-4 col-sm-6 p-4">
+                    <div class="card shadow border-success">
+                        <img src="{{url_for ('static', filename='pictures/sam2.jpg')}}" alt="" class="card-img-top pl-4 pr-4 pt-4 img-fluid" >
+                        <div class="card-text">
+                            <div class="pull-left">
+                                <img class="rounded-circle mr-2 ml-2 mt-2" width="30px" height="30px" src="sam.JPG" alt="">
+                            </div>
+                            <div class="pull-left">
+                                <div class="">
+                                    <span class="small"> <a href="index.html" class="text-success stretched-link">SmartHub</a></span>
+                                </div>
+                                <div class="">
+                                    <span class="small text-muted">1 week ago</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <h6 class="text-truncate">Past question on csc 2015 nsnsjjkkdkkd</h6>
+                            <p class="text-muted">&#8358;500</p>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="col-md-4 col-sm-6 p-4">
+                    <div class="card shadow border-success">
+                        <img src="{{url_for ('static', filename='pictures/sam2.jpg')}}" alt="" class="card-img-top pl-4 pr-4 pt-4 img-fluid"  >
+                        <div class="card-text">
+                            <div class="pull-left">
+                                <img class="rounded-circle mr-2 ml-2 mt-2" width="30px" height="30px" src="sam.JPG" alt="">
+                            </div>
+                            <div class="pull-left">
+                                <div class="">
+                                    <span class="small"> <a href="index.html" class="text-success stretched-link">SmartHub</a></span>
+                                </div>
+                                <div class="">
+                                    <span class="small text-muted">1 week ago</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <h6 class="text-truncate">Past question on csc 2015 nsnsjjkkdkkd</h6>
+                            <p class="text-muted">&#8358;500</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 p-4">
+                    <div class="card shadow border-success">
+                        <img src="{{url_for ('static', filename='pictures/sam2.jpg')}}" alt="" class="card-img-top pl-4 pr-4 pt-4 img-fluid">
+                        <div class="card-text">
+                            <div class="pull-left">
+                                <img class="rounded-circle mr-2 ml-2 mt-2" width="30px" height="30px" src="sam.JPG" alt="">
+                            </div>
+                            <div class="pull-left">
+                                <div class="">
+                                    <span class="small"> <a href="index.html" class="text-success stretched-link">SmartHub</a></span>
+                                </div>
+                                <div class="">
+                                    <span class="small text-muted">1 week ago</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <h6 class="text-truncate">Past question on csc 2015 nsnsjjkkdkkd</h6>
+                            <p class="text-muted">&#8358;500</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+{%endblock%}

@@ -1,0 +1,156 @@
+{%extends "layout.html"%}
+{%block title%}SignUp{%endblock%}
+{%block navlist%}
+<ul class="navbar-nav ml-auto">
+    <li class="nav-item">
+        <a href="{{url_for('login')}}" class="nav-link">Login</a>
+    </li>
+    <li class="nav-item">
+        <a href="{{url_for('signup')}}" class="nav-link">SigUp</a>
+    </li>
+    <li class="nav-item">
+        <a id="#why" class="nav-link">About</a>
+    </li>
+</ul>
+{%endblock%}
+{%block nav%}{{super()}}{%endblock%}
+
+{%block content%}
+<div class="jumbotron">
+    
+    <p class="h4 mb-4 text-center">Sign up</p>
+        <form class="text-center border border-light p-5" action="" method="POST">
+            {{form.hidden_tag()}}
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <!-- <input type="text" class="form-control" placeholder="First name"> -->
+                            {%if form.first_name.errors%}
+                                {{form.first_name(placeholder="First name", class="form-control is-invalid mb-2")}}
+                                {%for error in form.first_name.errors%}
+                                    <div class="invalid-feedback mb-2">
+                                        <span>{{error}}</span>
+                                    </div>
+                                {%endfor%}
+                            {%else%}
+                                {{form.first_name(placeholder="First name", class="form-control")}}
+                            {%endif%}
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            {%if form.last_name.errors%}
+                                {{form.last_name(placeholder="Last name", class="form-control is-invalid mb-2")}}
+                                {%for error in form.last_name.errors%}
+                                    <div class="invalid-feedback mb-2">
+                                        <span>{{error}}</span>
+                                    </div>
+                                {%endfor%}
+                            {%else%}
+                                {{form.last_name(placeholder="Last name", class="form-control mb-2")}}
+                            {%endif%}
+                        </div>
+                    </div>
+                </div>
+
+                {%if form.email.errors%}
+                    {{form.email(placeholder="Email", class="form-control is-invalid")}}
+                    {%for error in form.email.errors%}
+                        <div class="invalid-feedback mb-2">
+                            <span>{{error}}</span>
+                        </div>
+                    {%endfor%}
+                {%else%}
+                    {{form.email(placeholder="Email", class="form-control mb-2")}}
+                {%endif%}
+
+                {%if form.number.errors%}
+                    {{form.number(placeholder="Phone number", class="form-control is-invalid")}}
+                    {%for error in form.number.errors%}
+                        <div class="invalid-feedback mb-2">
+                            <span>{{error}}</span>
+                        </div>
+                    {%endfor%}
+                {%else%}
+                    {{form.number(placeholder="Phone number", class="form-control mb-2")}}
+                {%endif%}
+                
+                {%if form.state.errors%}
+                    {{form.state(placeholder="State of Residence", class="form-control is-invalid")}}
+                    {%for error in form.state.errors%}
+                        <div class="invalid-feedback mb-2">
+                            <span>{{error}}</span>
+                        </div>
+                    {%endfor%}
+                {%else%}
+                    {{form.state(placeholder="State of Residence", class="form-control mb-2")}}
+                {%endif%}
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            {%if form.password.errors%}
+                                {{form.password(placeholder="Password", class="form-control is-invalid")}}
+                                {%for error in form.password.errors%}
+                                    <div class="invalid-feedback">
+                                        <span>{{error}}</span>
+                                    </div>
+                                {%endfor%}
+                            {%else%}
+                                {{form.password(placeholder="Password", class="form-control")}}
+                            {%endif%}
+                            <small class="form-text text-muted mb-4">
+                                At least 8 characters (case sensitive)
+                            </small>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            {%if form.confirmPassword.errors%}
+                                {{form.confirmPassword(placeholder="Confirm password", class="form-control is-invalid")}}
+                                {%for error in form.confirmPassword.errors%}
+                                    <div class="invalid-feedback">
+                                        <span>{{error}}</span>
+                                    </div>
+                                {%endfor%}
+                            {%else%}
+                                {{form.confirmPassword(placeholder="Confirm Password", class="form-control")}}
+                            {%endif%}
+                            <small class="form-text text-muted mb-4">
+                                At least 8 characters (case sensitive)
+                            </small>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-left mt-2"> 
+                    <div class="float-left text-muted"><p>Register as a &nbsp;</p></div>
+                    {% for subfield in form.role%}
+                    <tr class="">
+                        <td class="form-check-input">{{ subfield }}</td>
+                        <td class="form-check-label">{{ subfield.label }}</td>
+                    </tr>
+                    {% endfor %}
+                </div>
+
+                <div class="text-left mt-4 mb-4">
+                    <div class="text-muted"><p>Fields you are into? &nbsp;</p></div>
+                    <div class="form-group">
+                        {% for choice in form.fields %}
+                        <div class="form-check-inline">
+                        {{ choice(class="form-check-input") }}
+                        {{ choice.label(class="form-check-label") }}
+                        </div>
+                        {% endfor %}    
+                    </div>
+                </div>
+               <input type="checkbox" name="" id="accept-terms" class="form-check-input" required>
+                <label for="accept-terms" class="form-check-label small">Accept Terms &amp; Conditions</label>
+                {{form.submit(class="btn btn-success my-4 btn-block", type="submit")}}
+                <a href="{{url_for('login')}}" class="btn btn-dark my-4 btn-block" type="submit">Login</a>
+            </div>
+        </form>
+                
+        <hr>
+</div>
+{%endblock%}
+        

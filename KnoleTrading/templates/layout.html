@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename = 'style4.css')}}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>KnowleTrading-{%block title%}{%endblock%}</title>
+</head>
+<body>
+    <div class="container-fluid">   
+        {%block nav%}
+        <nav class="navbar navbar-expand-lg navbar-dark bg-choco">
+            <a class="navbar-brand" href="#">KnowleTrading</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">                
+                {%block navlist%}{%endblock%}
+            </div>
+            {%endblock%}
+        </nav>
+        {%block content%}
+
+        {%endblock%}
+        <footer class="page-footer font-small stylish-color-dark pt-4" id="footer">
+            <div class="container text-center text-md-left">
+                <div class="row">
+                    <div class="col-md-4 mx-auto">
+                        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">About Us</h5>
+                        <p>We connect students and teachers of various institutions.</p>
+                    </div>
+                    <hr class="clearfix w-100 d-md-none">
+                    <div class="col-md-2 mx-auto">
+                        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Teachers</h5>                
+                        <ul class="list-unstyled">
+                            <li><a href="#!" class="text-my">Link 1</a></li>
+                            <li><a href="#!" class="text-my">Link 2</a></li>
+                            <li><a href="#!" class="text-my">Link 3</a></li>
+                            <li><a href="#!" class="text-my">More...</a></li>
+                        </ul>
+                    </div>        
+                    <hr class="clearfix w-100 d-md-none">
+                    <div class="col-md-2 mx-auto">
+                        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Materials</h5>        
+                        <ul class="list-unstyled">
+                            <li><a href="#!" class="text-my">Past questions</a></li>
+                            <li><a href="#!" class="text-my">Handouts</a></li>
+                            <li><a href="#!" class="text-my">Tutorials</a></li>
+                            <li><a href="#!" class="text-my">More...</a></li>
+                        </ul> 
+                    </div>
+                    <hr class="clearfix w-100 d-md-none">           
+                    <div class="col-md-2 mx-auto">    
+                        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Contact</h5>        
+                        <ul class="list-unstyled">
+                            <li><a href="#!" class="text-my">Whatsapp@08102603301</a></li>
+                            <li><a href="#!" class="text-my">Facebook@UniLib</a></li>
+                            <li><a href="#!" class="text-my">Twitter@UniLib</a></li>
+                            <li><a href="#!" class="text-my">Email@Unilib@gmail.com</a></li>
+                        </ul>            
+                    </div>
+                 </div>
+            </div>
+            <hr>
+            <ul class="list-unstyled list-inline text-center py-2">
+                <li class="list-inline-item">
+                    <h5 class="mb-1">Register Now</h5>
+                </li>
+                <li class="list-inline-item">
+                    <a href="{{url_for('signup')}}" class="btn btn-danger btn-rounded">Sign up!</a>
+                </li>
+            </ul>      
+            <hr>  
+            <ul class="list-unstyled list-inline text-center">
+                <li class="list-inline-item">
+                    <a href="#" class="fa fa-facebook"></a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="#" class="fa fa-twitter"></a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="#" class="fa fa-instagram"></a>
+                </li>
+            </ul>
+            <div class="footer-copyright text-center py-3">
+                <p class="copyright text-muted">Copyright &copy; KnowleTrading 2020</p>
+            </div>
+        </footer>
+    </div>
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+{%block script%}
+{%endblock%}
+</body>
+</html>

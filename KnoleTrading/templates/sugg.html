@@ -1,0 +1,53 @@
+{%extends "auth_layout.html"%}
+{%block title%}Suggestions{%endblock%}
+{%block navlist%}
+{{super()}}
+{%endblock%}
+{%block nav%}{{super()}}{%endblock%}
+{%block content%}
+    {{super()}}
+    <div class="container-fluid bg-light p-4">
+        <div class="container">
+            <div class="text-center font-weight-bold m-2 mt-0">
+                <ul class="nav nav-tabs text-center">
+                    <li class="nav-item"><a href="{{url_for('account')}}" class="nav-link text-success">Materials</a></li>
+                    <li class="nav-item"><a href="{{url_for('sugg')}}" class="nav-link active">Suggestions</a></li>
+                </ul>
+            </div>
+            {%if form.description.errors%}
+                {{form.description(placeholder="what is it about", class="form-control form-group is-invalid mt-4", cols="100", rows="2")}}
+                {%for error in form.description.errors%}
+                    <div class="invalid-feedback mb-2">
+                        <span>{{error}}</span>
+                    </div>
+                {%endfor%}
+
+            {%else%}
+                {{form.description(placeholder="make a suggestion", class="form-control form-group mt-4", cols="100", rows="2")}}
+            {%endif%}
+            {{form.submit(class="btn btn-success my-4 btn-block", type="submit")}}
+            <div class="my-4">            
+                <div class="card shadow border-success p-2">
+                    <div class="row">
+                        <div class="pull-left ml-4 mr-2">
+                            <img src="sam2.JPG" alt="" class="rounded-circle" width="50px" height="50px">
+                        </div>    
+                        <div class="pull-left">
+                            <a href="" class="text-success h6">Victor</a><br>
+                            <small class="text-muted">3 days ago</small>
+                        </div>                            
+                    </div>
+                    <div class="text-left p-2">
+                        We are not encouraging students to miss lectures as we are trying to provide helpful materials, rather you can use as a helping guide, adding to what you know already
+                        We connect teachers and students together. All materials and tutorials are from our teachers.
+                    </div>
+                    <div class="clearfix">
+                        <span class="float-left small"><a href="" class=""><i class="fa fa-comments-o"></i>0 comments</a></span>
+                        <span class="small"><a href="" class=""><i class="fa fa-comments-o"></i>0 likes</a></span>
+                    </div>
+                
+                </div>    
+            </div>
+        </div>    
+    </div>
+{%endblock%}

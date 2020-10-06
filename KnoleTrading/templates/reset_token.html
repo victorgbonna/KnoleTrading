@@ -1,0 +1,75 @@
+{%extends "layout.html"%}
+{%block title%}Reset Password{%endblock%}
+{%block navlist%}
+<ul class="navbar-nav ml-auto">
+    <li class="nav-item">
+        <a href="login.html" class="nav-link">Login</a>
+    </li>
+    <li class="nav-item">
+        <a href="signup.html" class="nav-link">SigUp</a>
+    </li>
+    <li class="nav-item">
+        <a id="#why" class="nav-link">About</a>
+    </li>
+</ul>
+{%endblock%}
+{%block nav%}{{super()}}{%endblock%}
+
+{%block content%}
+    <div class="jumbotron">
+        {%with messages = get_flashed_messages(with_categories=true)%}
+        {%if messages%}
+            {%for category, message in messages%}
+            <div class="alert alert-{{category}}">
+                {{message}}
+            </div>
+            {%endfor%}
+        {%endif%}
+        {%endwith%}    
+        <p class="h4 mb-4 text-center">Reset Password</p>
+            <form class="text-center border border-light p-5" action="" method="POST">
+                {{form.hidden_tag()}}
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                {%if form.password.errors%}
+                                    {{form.password(placeholder="Password", class="form-control is-invalid")}}
+                                    {%for error in form.password.errors%}
+                                        <div class="invalid-feedback">
+                                            <span>{{error}}</span>
+                                        </div>
+                                    {%endfor%}
+                                {%else%}
+                                    {{form.password(placeholder="Password", class="form-control")}}
+                                {%endif%}
+                                <small class="form-text text-muted mb-4">
+                                    At least 8 characters (case sensitive)
+                                </small>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                {%if form.confirmPassword.errors%}
+                                    {{form.confirmPassword(placeholder="Confirm password", class="form-control is-invalid")}}
+                                    {%for error in form.confirmPassword.errors%}
+                                        <div class="invalid-feedback">
+                                            <span>{{error}}</span>
+                                        </div>
+                                    {%endfor%}
+                                {%else%}
+                                    {{form.confirmPassword(placeholder="Confirm Password", class="form-control")}}
+                                {%endif%}
+                                <small class="form-text text-muted mb-4">
+                                    At least 8 characters (case sensitive)
+                                </small>
+                            </div>
+                        </div>
+                    </div>         
+                    {{form.submit(class="btn btn-success my-4 btn-block", type="submit")}}
+                </div>
+            </form>
+            <hr>
+    </div>
+{%endblock%}
+        

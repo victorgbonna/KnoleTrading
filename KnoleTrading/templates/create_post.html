@@ -1,0 +1,86 @@
+{%extends "auth_layout.html"%}
+{%block title%}Update Profile{%endblock%}
+{%block nav%}{{super()}}{%endblock%}
+{%block content%}
+
+<div class="jumbotron">
+    
+    <p class="h4 mb-4 text-center">Post Ad</p>
+        <form class="text-center border border-light p-5" action="" method="POST" enctype="multipart/form-data">
+            {{form.hidden_tag()}}
+            <div class="container">
+                <div class="input-group mb-4">
+                    <div class="custom-file">
+                        
+                        {{form.picture(class="custom-file-input",id="inputGroupFile")}}
+                        <label for="inputGroupFile" class="custom-file-label">
+                            Choose file
+                        </label>  
+                    </div>                    
+                </div>
+                {%if form.picture.errors%}
+                    {%for error in form.picture.errors%}
+                        <span class="text-danger">{{error}}</span>
+                    {%endfor%}
+                {%endif%}
+                {%if form.description.errors%}
+                    {{form.description(placeholder="what is it about", class="form-control form-group is-invalid mt-4", cols="100", rows="2")}}
+                    {%for error in form.description.errors%}
+                        <div class="invalid-feedback mb-2">
+                            <span>{{error}}</span>
+                        </div>
+                    {%endfor%}
+
+                {%else%}
+                    {{form.description(placeholder="what is it about", class="form-control form-group mt-4", cols="100", rows="2")}}
+                {%endif%}
+                
+                {%if form.price.errors%}
+                    <div class="input-group">
+                        <button type="button" class="input-group-addon mt-4 btn-success"><span>&#8358;</span></button>
+                        {{form.price(class="form-control mt-4 is-invalid",placeholder="price")}}                
+                    </div>
+                        <small class="text-danger">invalid input</small>
+                {%else%}
+                    <div class="input-group">
+                        <button type="button" class="input-group-addon mt-4 btn-success"><span>&#8358;</span></button>
+                        {{form.price(class="form-control mt-4",placeholder="price")}}                
+                    </div>
+                {%endif%}               
+                
+                <div class="text-left mt-4 mb-4">
+                    <div class="text-muted"><p>fields related to your Ad &nbsp;</p></div>
+                    <div class="form-group">
+                        {% for choice in form.fields %}
+                        <div class="form-check-inline">
+                        {{ choice(class="form-check-input") }}
+                        {{ choice.label(class="form-check-label") }}
+                        </div>
+                        {% endfor %}    
+                    </div>
+                    {%if form.fields.errors%}
+                        {%for error in form.price.errors%}
+                            <div class="invalid-feedback mb-2">
+                                <small>{{error}}</small>
+                            </div>
+                        {%endfor%}
+                    {%endif%}
+                </div>
+                {{form.submit(class="btn btn-success my-4 btn-block", type="submit")}}
+            </div>
+        </form>
+                
+        <hr>
+    </div>
+</div>
+{%endblock%}
+
+{%block script%}
+    <script>
+        $('#inputGroupFile').on('change', function(){
+        var fileName= $(this).val();
+        $(this).next('.custom-file-label').html(fileName);
+        })
+
+    </script>    
+{%endblock%}
